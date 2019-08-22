@@ -1,0 +1,38 @@
+{% load i18n %}
+
+{% if messages %}
+<ul class="messages">
+  {% for message in messages %}
+  <p{% if message.tags %} class="{{message.tags}}"{% endif %}> {{message}}</p>
+  {% endfor %}
+</ul>
+{% endif %}
+
+{% include "aplicacion/search-aplicacion.html" %}
+
+<h1>{% trans 'Hola caracola' %}</h1>
+<p>{% blocktrans %}Holi{% endblocktrans %}</p>
+<style> h1 {        color: #00FF00;}</style>
+<h2>{% trans 'usuario con cuenta registrada' %}</h2>
+
+<!--{{ queryset_list}}
+{{ object_list}}-->
+{%for object in object_list %}
+<li>
+
+  {{object.slug}} {{object.id}} <a href='/aplicacion/post:{{object.id}}/'> {{object.title}} </a>
+  <!--{{object.slug}} {{object.id}} <a href='{% url "aplicacion:detail" id=object.id %}'> {{object.title}} </a><br>-->
+  <!--Con esto es necesario añadir en url del proyecto, en el include(a continuacion): , nameSspace=aplicacion_url-->
+  <!--<{{object.slug}} {{object.id}} <a href='{{ object.get_absolute_url }}'> {{object.title}} </a>-->
+</li>
+{% endfor %}
+
+<form method="post" action="create/"> {% csrf_token %}
+{% trans "Crear" as the_title %}
+<p><input type='submit' value={{ the_title }}></p>
+</form>
+
+<!--{{ otro_dic }}
+{{ num }}-->
+
+<p>{% trans 'Adios!' %}</p>

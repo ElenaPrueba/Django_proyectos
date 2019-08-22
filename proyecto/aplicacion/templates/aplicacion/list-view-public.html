@@ -1,0 +1,11 @@
+{% load i18n %}
+<h1>Esto es público</h1>
+<h1>Página de registro</h1>
+
+<form class="login" method="POST" action="/login/"> {% csrf_token %}
+  {{form.as_p}}
+  <li><input type="submit" class="logBut" value="Log in"/></li>
+
+</form>
+<p>Si quiere ir a Django Admin:</p>
+  <a href='/admin' > Registrarse</a>

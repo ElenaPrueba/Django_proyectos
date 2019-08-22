@@ -1,0 +1,157 @@
+{% load i18n %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="vapid-key" content="{{ vapid_key }}">
+    {% if user.id %}
+        <meta name="user_id" content="{{ user.id }}">
+    {% endif %}
+    <title>Web Prueba</title>
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet">
+
+
+
+  </head>
+
+  <body>
+
+    {% if messages %}
+    <ul class="messages">
+      {% for message in messages %}
+      <p{% if message.tags %} class="{{message.tags}}"{% endif %}> {{message}}</p>
+      {% endfor %}
+    </ul>
+    {% endif %}
+
+    {% include "aplicacion/search-aplicacion.html" %}
+
+<!-- <button id='btn'>Notificacion</button>
+<input type="button" id="btn-1" value="Botón 1" onclick="mostrarBoton()"/>
+<input type="button" id="btn-2" value="Botón 2" style="display: none;"/>-->
+<!-- <input type="text" id="tx" value="Hola" onclick= BlinkIt()/> -->
+<script>
+/*var btn=document.getElementById('btn');
+var btn_1 = document.getElementById('btn-1');
+var btn_2 = document.getElementById('btn-2');
+
+function mostrarBoton () {
+    btn_1.style.display = 'none';
+    btn_2.style.display = 'none';
+}
+
+
+btn.addEventListener('click',function() {
+  Push.create("Hola mundo",{
+  body: "Ejemplo",
+  timeout: 3000,
+  onClick: function(){
+    window.focus();
+    this.close();
+  }
+  });
+});*/
+// window.setInterval (BlinkIt, 500);
+//   var color = "red";
+//
+//   function BlinkIt () {
+//     var blink = document.getElementById ("blink");
+//     color = (color == "#ffffff")? "red" : "#ffffff";
+//     blink.style.color = color;
+//     blink.style.fontSize='36px';
+//   }
+
+</script>
+<!--
+
+<div>
+    <form id="send-push__form">
+        <h3 class="header">Send a push notification</h3>
+        <p class="error"></p>
+        <input type="text" name="head" placeholder="Header: Your favorite airline 😍">
+        <textarea name="body" id="" cols="30" rows="10" placeholder="Body: Your flight has been cancelled 😱😱😱"></textarea>
+        <button>Send Me</button>
+    </form>
+</div>-->
+
+
+<h1>{% trans 'Hola caracola' %}</h1>
+<p>{% blocktrans %}Holi{% endblocktrans %}</p>
+<style> h1 {        color: #00FF00;}</style>
+<h2>{% trans 'usuario con cuenta registrada' %}</h2>
+
+<!--{{ queryset_list}}
+{{ object_list}}-->
+
+{%for object in object_list %}
+<li>
+
+  {{object.slug}} {{object.id}} <a href='/aplicacion/post:{{object.id}}/'> {{object.title}} </a>
+  <!--{{object.slug}} {{object.id}} <a href='{% url "aplicacion:detail" id=object.id %}'> {{object.title}} </a><br>-->
+  <!--Con esto es necesario añadir en url del proyecto, en el include(a continuacion): , nameSspace=aplicacion_url-->
+  <!--<{{object.slug}} {{object.id}} <a href='{{ object.get_absolute_url }}'> {{object.title}} </a>-->
+</li>
+{% endfor %}
+</script>
+
+
+<form method="post" action="create/"> {% csrf_token %}
+{% trans "Crear" as the_title %}
+<p><input type='submit' value={{ the_title }}></p>
+</form>
+
+<!--{{ otro_dic }}
+{{ num }}-->
+
+<p>{% trans 'Adios!' %}</p>
+
+
+
+<script>
+    //var roomName = {{ room_name_json }};
+
+  /*  var chatSocket = new WebSocket(
+        'ws://' + window.location.host +
+        '/ws/aplicacion/');
+
+    chatSocket.onmessage = function(e) {
+        var data = JSON.parse(e.data);
+        var message = data['message'];
+        document.querySelector('#chat-log').value += (message + '\n');
+    };
+
+    chatSocket.onclose = function(e) {
+        console.error('Chat socket closed unexpectedly');
+    };
+
+    document.querySelector('#chat-message-input').focus();
+    document.querySelector('#chat-message-input').onkeyup = function(e) {
+        if (e.keyCode === 13) {  // enter, return
+            document.querySelector('#chat-message-submit').click();
+        }
+    };
+
+    document.querySelector('#chat-message-submit').onclick = function(e) {
+        var messageInputDom = document.querySelector('#chat-message-input');
+        var message = messageInputDom.value;
+        chatSocket.send(JSON.stringify({
+            'message': message
+        }));
+
+        messageInputDom.value = '';
+    };*/
+</script>
+
+
+
+
+
+
+
+
+</body>
+</html>

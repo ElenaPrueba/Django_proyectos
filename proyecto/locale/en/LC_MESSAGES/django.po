@@ -1,0 +1,63 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-07-14 10:10+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: aplicacion/templates/aplicacion/list-view.html:14
+msgid "Hola caracola"
+msgstr "Hello conch"
+
+#: aplicacion/templates/aplicacion/list-view.html:15
+msgid "Holi"
+msgstr "Hi"
+
+#: aplicacion/templates/aplicacion/list-view.html:17
+msgid "usuario con cuenta registrada"
+msgstr "Registered user"
+
+#: aplicacion/templates/aplicacion/list-view.html:32
+msgid "Crear"
+msgstr "Create"
+
+#: aplicacion/templates/aplicacion/list-view.html:39
+msgid "Adios!"
+msgstr "Bye!"
+
+#: aplicacion/templates/aplicacion/search-aplicacion.html:3
+msgid "Buscar"
+msgstr "Search"
+
+#: aplicacion/views.py:222
+msgid "Post creado exitosamente"
+msgstr "Post created"
+
+#: aplicacion/views.py:253
+msgid "Post actualizado exitosamente"
+msgstr "Post updated"
+
+#: aplicacion/views.py:278
+msgid "Post eliminado exitosamente"
+msgstr "Post deleted"
+
+#: proyecto/settings.py:142
+msgid "Español"
+msgstr "Spanish"
+
+#: proyecto/settings.py:143 proyecto/settings.py:144
+msgid "Inglés"
+msgstr "English"

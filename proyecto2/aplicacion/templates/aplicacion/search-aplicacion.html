@@ -1,0 +1,5 @@
+{% load i18n %}
+<form method='GET' action='/aplicacion/'>
+  {% trans "Buscar" as the_title %}
+<input type='text' name='q' placeholder={{ the_title }}>
+</form>

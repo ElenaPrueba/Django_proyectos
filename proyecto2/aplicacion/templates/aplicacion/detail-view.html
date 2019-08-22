@@ -1,0 +1,13 @@
+{% load i18n %}
+{% if messages %}
+<ul class="messages">
+  {% for message in messages %}
+  <p{% if message.tags %} class="{{message.tags}}"{% endif %}> {{message}}</p>
+  {% endfor %}
+</ul>
+{% endif %}
+{% include "aplicacion/search-aplicacion.html" %}
+<h1>Detail</h1>
+<h2> {{object.title}}</h2>
+
+{{object.content}}

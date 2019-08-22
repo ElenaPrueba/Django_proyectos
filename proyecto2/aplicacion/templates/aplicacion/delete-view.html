@@ -1,0 +1,16 @@
+{% load i18n %}
+{% if messages %}
+<ul class="messages">
+  {% for message in messages %}
+  <p{% if message.tags %} class="{{message.tags}}"{% endif %}> {{message}}</p>
+  {% endfor %}
+</ul>
+{% endif %}
+<h1>Delete {{object.tittle}}</h1>
+
+<form method="POST" action="."> {% csrf_token %}
+  ¿Estas seguro de que quieres eliminarlo?
+
+  <input type='submit' value='Yes'>
+  <a href='/aplicacion/post:{{object.id}}/' >Cancelar</a>
+</form>

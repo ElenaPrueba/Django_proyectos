@@ -1,0 +1,10 @@
+{% load i18n %}
+<h1>Update {{object.title}}</h1>
+
+{{form.instance.title}}
+
+<form method="post" action="."> {% csrf_token %}
+{{form.as_p}}
+
+<input type='submit' value='Edit'>
+</form>
